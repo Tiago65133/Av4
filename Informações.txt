@@ -1,0 +1,3 @@
+Jogo feito em pygame
+Para reniciar o jogo basta clicar na tecla "r"
+
