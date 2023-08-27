@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interagindo com Backend</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Interagindo com Backend Simples</h1>
+    <button id="sendData">Enviar Dados</button>
+
+    <script>
+        $(document).ready(function () {
+            $('#sendData').click(function () {
+                var dataToSend = {
+                    key1: 'value1',
+                    key2: 'value2'
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/process_data',
+                    data: JSON.stringify(dataToSend),
+                    contentType: 'application/json;charset=UTF-8',
+                    success: function (response) {
+                        console.log(response.message);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
